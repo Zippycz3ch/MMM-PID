@@ -57,7 +57,7 @@ Module.register("MMM-PID", {
       var ul = document.createElement("ul");
 
       // Loop through departures and create list items.
-      departures.slice(0, this.config.limit).forEach(function (departure) {
+      departures.forEach(function (departure) {
         // Extract relevant data for display.
         var tramName = departure.route.short_name || "Unknown Tram";
         var direction = departure.trip.headsign || "Unknown Direction";
