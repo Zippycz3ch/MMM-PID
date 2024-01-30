@@ -1,8 +1,6 @@
 Module.register("MMM-PID", {
   // Default module config.
   defaults: {
-    id: "YOUR_ID_HERE",
-    apiKey: "YOUR_API_KEY_HERE",
     limit: 10, // Default value set to 10.
     updateInterval: 60 * 1000, // Update every minute (adjust as needed).
   },
