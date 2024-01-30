@@ -14,8 +14,19 @@ Module.register("MMM-PID", {
   getData: function () {
     const url = `https://api.golemio.cz/v2/pid/departureboards?ids=${this.config.id}&limit=${this.config.limit}`;
 
-    // Make an API request here.
-    fetch(url)
+    // Create headers object with X-Access-Token header.
+    const headers = new Headers({
+      'X-Access-Token': this.config.apiKey, // Get apiKey from config.
+    });
+
+    // Create the request with the custom headers.
+    const request = new Request(url, {
+      method: 'GET',
+      headers: headers,
+    });
+
+    // Make the API request.
+    fetch(request)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
