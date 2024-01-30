@@ -20,9 +20,17 @@ let config = {
 			limit: 10,                      // Default value set to 10.
 			updateInterval: 60 * 1000,      // Update every minute (adjust as needed).
 		  }
+		},
+		{
+			module: "clock",
+			position: "top_left",   // This can be any of the regions.
+			config:
+			{
+				displaySeconds: false,
+				dateFormat: "dddd, Do MMMM YYYY",
+			}
 		}
 	  ]
-	  
 };
 
 /*************** DO NOT EDIT THE LINE BELOW ***************/

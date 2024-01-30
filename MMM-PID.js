@@ -12,17 +12,10 @@ Module.register("MMM-PID", {
   },
 
   getData: function () {
-    const headers = new Headers({
-      "X-Access-Token": this.config.apiKey,
-    });
-
     const url = `https://api.golemio.cz/v2/pid/departureboards?ids=${this.config.id}&limit=${this.config.limit}`;
 
     // Make an API request here.
-    fetch(url, {
-      method: "GET",
-      headers: headers,
-    })
+    fetch(url)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -33,17 +26,19 @@ Module.register("MMM-PID", {
         // Log the received data for debugging.
         console.log("Received data from API:", data);
         // Process the data received from the API and update the module's content.
-        this.updateData(data);
+        this.updateData(data.departures);
       })
       .catch((error) => {
         // Log any errors for debugging.
         console.error("Error fetching data:", error);
+        // Display an error message on the module.
+        this.showError(error.message);
       });
   },
 
-  updateData: function (data) {
+  updateData: function (departures) {
     // Update the module's content with the received data.
-    if (data && data.departures && data.departures.length > 0) {
+    if (departures && departures.length > 0) {
       var wrapper = document.createElement("div");
       wrapper.className = "MMM-PID";
 
@@ -51,11 +46,11 @@ Module.register("MMM-PID", {
       var ul = document.createElement("ul");
 
       // Loop through departures and create list items.
-      data.departures.slice(0, this.config.limit).forEach(function (departure) {
+      departures.slice(0, this.config.limit).forEach(function (departure) {
         // Extract relevant data for display.
         var tramName = departure.route.short_name || "Unknown Tram";
         var direction = departure.trip.headsign || "Unknown Direction";
-        var expectedDepartureTime = departure.departure_timestamp.predicted || "Unknown Time";
+        var expectedDepartureTime = departure.arrival_timestamp.predicted || "Unknown Time";
         var remainingMinutes = departure.departure_timestamp.minutes || "Unknown Minutes";
 
         // Construct the list item with departure information.
@@ -81,6 +76,13 @@ Module.register("MMM-PID", {
       wrapper.innerHTML = noDeparturesMessage;
       this.updateDom(2000);
     }
+  },
+
+  showError: function (errorMessage) {
+    var wrapper = document.createElement("div");
+    wrapper.className = "MMM-PID";
+    wrapper.innerHTML = `Error: ${errorMessage}`;
+    this.updateDom(2000);
   },
 
   getDom: function () {
