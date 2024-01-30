@@ -1,6 +1,8 @@
 Module.register("MMM-PID", {
   // Default module config.
   defaults: {
+    id: "U522Z1P",             // Your stop ID
+    apiKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjQxMywiaWF0IjoxNzA2NjI3MTU5LCJleHAiOjExNzA2NjI3MTU5LCJpc3MiOiJnb2xlbWlvIiwianRpIjoiMmViMzMxMGMtYWM5ZS00OGNmLTkwOTktYWFlZGMyOTIwNzdlIn0.7dxNbLlK-DbF-L4WW30cgOHihU4h7kgIXe_hHD8wha4",    // Your API key
     limit: 10, // Default value set to 10.
     updateInterval: 60 * 1000, // Update every minute (adjust as needed).
   },
@@ -12,11 +14,13 @@ Module.register("MMM-PID", {
   },
 
   getData: function () {
-    const url = `https://api.golemio.cz/v2/pid/departureboards?ids=${this.config.id}&limit=${this.config.limit}`;
+   // const url = `https://api.golemio.cz/v2/pid/departureboards?ids=${this.config.id}&limit=${this.config.limit}`;
+    const url = `https://api.golemio.cz/v2/pid/departureboards?ids=U522Z1P&limit=10`;
+
 
     // Create headers object with X-Access-Token header.
     const headers = new Headers({
-      'X-Access-Token': this.config.apiKey, // Get apiKey from config.
+      'X-Access-Token': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjQxMywiaWF0IjoxNzA2NjI3MTU5LCJleHAiOjExNzA2NjI3MTU5LCJpc3MiOiJnb2xlbWlvIiwianRpIjoiMmViMzMxMGMtYWM5ZS00OGNmLTkwOTktYWFlZGMyOTIwNzdlIn0.7dxNbLlK-DbF-L4WW30cgOHihU4h7kgIXe_hHD8wha4", // Get apiKey from config.
     });
 
     // Create the request with the custom headers.
