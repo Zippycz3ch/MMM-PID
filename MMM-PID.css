@@ -1,22 +1,17 @@
-/* Add your custom styles to MMM-PID module */
-.MMM-PID {
-  font-family: Arial, sans-serif;
+.MMM-PublicTransportDepartures .departure-table {
+  color: #fff;
   font-size: 16px;
-  padding: 10px;
-  color: white; /* Set the font color to white */
+  width: 100%;
 }
 
-.MMM-PID ul {
-  list-style: none;
-  padding: 0;
+.MMM-PublicTransportDepartures .departure-row {
+  border-bottom: 1px solid #666;
 }
 
-.MMM-PID li {
-  margin-bottom: 10px;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 10px;
+.MMM-PublicTransportDepartures .departure-data {
+  padding: 5px 10px;
 }
 
-.MMM-PID li:last-child {
-  border-bottom: none;
+.MMM-PublicTransportDepartures .departure-data.time-remaining {
+  text-align: right;
 }
