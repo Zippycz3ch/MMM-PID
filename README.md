@@ -54,7 +54,7 @@ Authenticate on the website https://api.golemio.cz/pid/docs/openapi/#/
 Get your stop or node ID using the stop name
 ![Get your stop or node ID](images/stops.png)
 
-The response contains 2 stop_ids, each for one separate stop. The aswIds is the first 3 numbeers in stop_id
- StopID U754Z1P = aswIds 754
-![Screenshot of PID module](images/response.png)
+The response contains 2 stop_ids, each for one separate stop. The aswIds is the first 3 numbers in stop_id
 
+![Screenshot of PID module](images/response.png)
+StopID U754Z1P = aswIds 754
