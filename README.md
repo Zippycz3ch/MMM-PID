@@ -3,6 +3,12 @@ Magic Mirror Module for Prague Integrated Transport (PID)
 
 ![Screenshot of PID module](images/module.png)
 
+Installation
+```
+cd ~/MagicMirror/modules/
+git clone https://github.com/Zippycz3ch/MMM-PID
+```
+
 - shows departures and time left from departure from selected stop or node and their end station
 - stop is single stop
 - node is two or more spots that share same name 
