@@ -5,6 +5,7 @@ Module.register("MMM-PID", {
         ids: "",
         limit: 10,
         updateInterval: 60000,
+        aswIds: "", // Add the new parameter to the defaults
     },
 
     start: function() {

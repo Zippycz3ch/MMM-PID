@@ -4,7 +4,7 @@ var moment = require("moment");
 
 module.exports = NodeHelper.create({
     start: function() {
-        console.log("MMM-PID helper started..."); // Updated log message
+        console.log("MMM-PID helper started...");
     },
 
     socketNotificationReceived: function(notification, payload) {
@@ -31,7 +31,8 @@ module.exports = NodeHelper.create({
             },
             qs: {
                 'ids': this.config.ids,
-                'limit': this.config.limit
+                'limit': this.config.limit,
+                'aswIds': this.config.aswIds
             }
         };
 
