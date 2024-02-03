@@ -47,3 +47,11 @@ Sample config
     }
 }, 
 ```
+
+Configurable paramethers
+aswIds
+ids
+Title
+limit: 10
+updateInterval: 5000
+coloredSameRoute: true, // Default to true for colored same routes

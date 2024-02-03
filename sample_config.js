@@ -16,5 +16,8 @@
                 ids: "U522Z2P",
             }
         ],
+        coloredSameRoute: true, // Set to true for colored same routes or false for regular colors
+        updateInterval: 5000
+
     }
 }, 
