@@ -1,11 +1,11 @@
 {
-    module: "MMM-PublicTransportGolemio",
-    position: "top_right", // or any position you prefer
+    module: "MMM-PID",
+    position: "top_right",
     config: {
         apiBase: "https://api.golemio.cz/v2/pid/departureboards",
         stopId: "U522Z1P",
         limit: 10,
-        accessToken: "YOUR_ACCESS_TOKEN_HERE", // Ensure you replace this with your actual Golemio API token
-        updateInterval: 60000, // Update every 60 seconds
+        accessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjQxMywiaWF0IjoxNzA2NjI3MTU5LCJleHAiOjExNzA2NjI3MTU5LCJpc3MiOiJnb2xlbWlvIiwianRpIjoiMmViMzMxMGMtYWM5ZS00OGNmLTkwOTktYWFlZGMyOTIwNzdlIn0.7dxNbLlK-DbF-L4WW30cgOHihU4h7kgIXe_hHD8wha4",
+        updateInterval: 60000, 
     }
 }

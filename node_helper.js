@@ -24,7 +24,7 @@ module.exports = NodeHelper.create({
     fetchDeparturesData: function() {
         var self = this;
         var options = {
-            url: this.config.apiBase + "/pid/departureboards",
+            url: this.config.apiBase,
             method: 'GET',
             headers: {
                 'X-Access-Token': this.config.accessToken
