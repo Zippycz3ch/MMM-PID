@@ -29,13 +29,22 @@ module.exports = NodeHelper.create({
             headers: {
                 'X-Access-Token': this.config.accessToken
             },
-            qs: {
-                'ids': this.config.ids,
-                'limit': this.config.limit,
-                'aswIds': this.config.aswIds
-            }
+            qs: {}
         };
-
+    
+        // Add parameters to the query string only if they are defined in the configuration
+        if (this.config.ids) {
+            options.qs.ids = this.config.ids;
+        }
+    
+        if (this.config.limit) {
+            options.qs.limit = this.config.limit;
+        }
+    
+        if (this.config.aswIds) {
+            options.qs.aswIds = this.config.aswIds;
+        }
+    
         request(options, function(error, response, body) {
             if (!error && response.statusCode == 200) {
                 var data = JSON.parse(body);
@@ -57,4 +66,5 @@ module.exports = NodeHelper.create({
             }
         });
     },
+    
 });
