@@ -25,46 +25,51 @@ Module.register("MMM-PID", {
 
     getDom: function() {
         var wrapper = document.createElement("div");
-
+    
         // Render the departures data for each feed if loaded, otherwise show loading message
         for (let i = 0; i < this.config.feeds.length; i++) {
             if (this.loaded[i]) {
                 var feedWrapper = document.createElement("div");
                 feedWrapper.className = "departure-feed";
-
+    
                 // Extract the title from stops[0].stop_name
-                var feedTitle = this.config.feeds[i].title || this.config.feeds[i].aswIds || this.config.feeds[i].ids || "Feed " + i;
-
+                var feedConfig = this.config.feeds[i];
+                var feedTitle = feedConfig.title || feedConfig.aswIds || feedConfig.ids || "Feed " + i;
+    
                 var title = document.createElement("div");
                 title.className = "departure-title";
                 title.innerHTML = feedTitle;
                 feedWrapper.appendChild(title);
-
+    
                 var table = document.createElement("table");
                 table.className = "departure-table";
-
+    
                 this.departures[i].forEach(function(departure) {
                     var row = document.createElement("tr");
                     row.className = "departure-row";
-
+    
                     var nameCell = document.createElement("td");
                     nameCell.className = "departure-data";
                     nameCell.innerHTML = departure.name;
                     row.appendChild(nameCell);
-
+    
                     var timeCell = document.createElement("td");
                     timeCell.className = "departure-data time-remaining";
-                    timeCell.innerHTML = departure.timeRemaining + " min";
+                    if (departure.timeRemaining < 1) {
+                        timeCell.innerHTML = "<1 min"; // Display "<1" when timeRemaining is less than 1
+                    } else {
+                        timeCell.innerHTML = departure.timeRemaining + " min";
+                    }
                     row.appendChild(timeCell);
-
+    
                     var destinationCell = document.createElement("td");
                     destinationCell.className = "departure-data";
                     destinationCell.innerHTML = departure.endingStation;
                     row.appendChild(destinationCell);
-
+    
                     table.appendChild(row);
                 });
-
+    
                 feedWrapper.appendChild(table);
                 wrapper.appendChild(feedWrapper);
             } else {
@@ -75,7 +80,8 @@ Module.register("MMM-PID", {
                 wrapper.appendChild(loadingMessage);
             }
         }
-
+    
         return wrapper;
     }
+    
 });

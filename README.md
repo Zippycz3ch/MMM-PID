@@ -13,9 +13,13 @@ This module is using [Public Transport | Golemio API](https://api.golemio.cz/pid
 
 [Register here for API key](https://api.golemio.cz/api-keys/auth/sign-in).
 
-[Get your stop or node ID] (https://api.golemio.cz/pid/docs/openapi/#/%F0%9F%A7%BE%20GTFS%20Static/get_gtfs_stops)
 
+Authenticate on the website https://api.golemio.cz/pid/docs/openapi/#/
 ![Use authenticate on the website](images/auth.png)
+
+[Get your stop or node ID](https://api.golemio.cz/pid/docs/openapi/#/%F0%9F%A7%BE%20GTFS%20Static/get_gtfs_stops)
+
+![Get your stop or node ID](images/stops.png)
 
 
 
