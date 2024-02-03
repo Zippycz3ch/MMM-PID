@@ -1,7 +1,8 @@
 # MMM-PID
 Magic Mirror Module for Prague Integrated Transport (PID)
 
-[Contribution guidelines for this project](images/module.png)
+![Screenshot of PID module](images/module.png)
+
 
 
 - shows departures and time left from departure from selected stop or node and their end station
