@@ -8,7 +8,7 @@
                 aswIds: "522"
                 title: "Ostrčilovo náměstí"
             },
-            {
+            { 
                 ids: "U522Z1P",
                 limit: 2
             },
