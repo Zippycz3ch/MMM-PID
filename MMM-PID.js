@@ -2,23 +2,30 @@ Module.register("MMM-PID", {
     defaults: {
         apiBase: "https://api.golemio.cz/v2/pid/departureboards",
         accessToken: "",
-        ids: "",
-        limit: 10,
+        feeds: [
+            {
+                ids: "",
+                limit: 10,
+                aswIds: "",
+            },
+        ],
         updateInterval: 5000,
-        aswIds: "", 
     },
 
     start: function() {
         Log.info("Starting module: " + this.name);
-        this.departures = [];
-        this.loaded = false; // Flag to track if data is loaded
+        this.departures = {};
+        this.loaded = {};
+        for (let i = 0; i < this.config.feeds.length; i++) {
+            this.loaded[i] = false; // Flags to track if data is loaded for each feed
+        }
         this.sendSocketNotification("CONFIG", this.config);
     },
 
     socketNotificationReceived: function(notification, payload) {
         if (notification === "DEPARTURES_DATA") {
-            this.departures = payload;
-            this.loaded = true; // Set the flag to true when data arrives
+            this.departures[payload.feedId] = payload.departures;
+            this.loaded[payload.feedId] = true; // Set the flag to true when data arrives
             this.updateDom();
         }
     },
@@ -26,38 +33,46 @@ Module.register("MMM-PID", {
     getDom: function() {
         var wrapper = document.createElement("div");
 
-        // Render the departures data if loaded, otherwise show loading message
-        if (this.loaded) {
-            var table = document.createElement("table");
-            table.className = "departure-table";
+        // Render the departures data for each feed if loaded, otherwise show loading message
+        for (let i = 0; i < this.config.feeds.length; i++) {
+            if (this.loaded[i]) {
+                var feedWrapper = document.createElement("div");
+                feedWrapper.className = "departure-feed";
 
-            this.departures.forEach(function(departure) {
-                var row = document.createElement("tr");
-                row.className = "departure-row";
+                var table = document.createElement("table");
+                table.className = "departure-table";
 
-                var nameCell = document.createElement("td");
-                nameCell.className = "departure-data";
-                nameCell.innerHTML = departure.name;
-                row.appendChild(nameCell);
+                this.departures[i].forEach(function(departure) {
+                    var row = document.createElement("tr");
+                    row.className = "departure-row";
 
-                var timeCell = document.createElement("td");
-                timeCell.className = "departure-data time-remaining";
-                timeCell.innerHTML = departure.timeRemaining + " min";
-                row.appendChild(timeCell);
+                    var nameCell = document.createElement("td");
+                    nameCell.className = "departure-data";
+                    nameCell.innerHTML = departure.name;
+                    row.appendChild(nameCell);
 
-                var destinationCell = document.createElement("td");
-                destinationCell.className = "departure-data";
-                destinationCell.innerHTML = departure.endingStation;
-                row.appendChild(destinationCell);
+                    var timeCell = document.createElement("td");
+                    timeCell.className = "departure-data time-remaining";
+                    timeCell.innerHTML = departure.timeRemaining + " min";
+                    row.appendChild(timeCell);
 
-                table.appendChild(row);
-            });
+                    var destinationCell = document.createElement("td");
+                    destinationCell.className = "departure-data";
+                    destinationCell.innerHTML = departure.endingStation;
+                    row.appendChild(destinationCell);
 
-            wrapper.appendChild(table);
-        } else {
-            // Show loading message if data is not loaded yet
-            wrapper.innerHTML = "Loading departures...";
-            wrapper.className = "dimmed light small";
+                    table.appendChild(row);
+                });
+
+                feedWrapper.appendChild(table);
+                wrapper.appendChild(feedWrapper);
+            } else {
+                // Show loading message for each feed if data is not loaded yet
+                var loadingMessage = document.createElement("div");
+                loadingMessage.innerHTML = "Loading departures for Feed " + i + "...";
+                loadingMessage.className = "dimmed light small";
+                wrapper.appendChild(loadingMessage);
+            }
         }
 
         return wrapper;

@@ -15,13 +15,17 @@ module.exports = NodeHelper.create({
     },
 
     scheduleFetchDeparturesData: function() {
-        this.fetchDeparturesData();
+        for (let i = 0; i < this.config.feeds.length; i++) {
+            this.fetchDeparturesData(this.config.feeds[i], i);
+        }
         setInterval(() => {
-            this.fetchDeparturesData();
+            for (let i = 0; i < this.config.feeds.length; i++) {
+                this.fetchDeparturesData(this.config.feeds[i], i);
+            }
         }, this.config.updateInterval);
     },
 
-    fetchDeparturesData: function() {
+    fetchDeparturesData: function(feed, feedIndex) {
         var self = this;
         var options = {
             url: this.config.apiBase,
@@ -31,20 +35,19 @@ module.exports = NodeHelper.create({
             },
             qs: {}
         };
-    
-        // Add parameters to the query string only if they are defined in the configuration
-        if (this.config.ids) {
-            options.qs.ids = this.config.ids;
+
+        if (feed.ids) {
+            options.qs.ids = feed.ids;
         }
-    
-        if (this.config.limit) {
-            options.qs.limit = this.config.limit;
+
+        if (feed.limit) {
+            options.qs.limit = feed.limit;
         }
-    
-        if (this.config.aswIds) {
-            options.qs.aswIds = this.config.aswIds;
+
+        if (feed.aswIds) {
+            options.qs.aswIds = feed.aswIds;
         }
-    
+
         request(options, function(error, response, body) {
             if (!error && response.statusCode == 200) {
                 var data = JSON.parse(body);
@@ -59,12 +62,14 @@ module.exports = NodeHelper.create({
                             endingStation: departure.trip.headsign,
                         };
                     });
-                    self.sendSocketNotification("DEPARTURES_DATA", departuresData);
+                    self.sendSocketNotification("DEPARTURES_DATA", {
+                        feedId: feedIndex,
+                        departures: departuresData
+                    });
                 }
             } else {
-                console.log("Error fetching departures data: ", error);
+                console.log("Error fetching departures data for Feed " + feedIndex + ": ", error);
             }
         });
     },
-    
 });
