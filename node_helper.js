@@ -30,7 +30,7 @@ module.exports = NodeHelper.create({
                 'X-Access-Token': this.config.accessToken
             },
             qs: {
-                'ids': this.config.stopIds,
+                'ids': this.config.ids,
                 'limit': this.config.limit
             }
         };

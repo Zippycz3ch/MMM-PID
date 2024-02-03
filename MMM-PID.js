@@ -2,7 +2,7 @@ Module.register("MMM-PID", { // Updated module name
     defaults: {
         apiBase: "",
         accessToken: "",
-        stopIds: "",
+        ids: "",
         limit: 10,
         updateInterval: 60000,
     },
