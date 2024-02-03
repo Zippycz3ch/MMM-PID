@@ -1,12 +1,9 @@
 Module.register("MMM-PID", {
     defaults: {
         apiBase: "https://api.golemio.cz/v2/pid/departureboards",
-        accessToken: "",
         feeds: [
             {
-                ids: "",
                 limit: 10,
-                aswIds: "",
             },
         ],
         updateInterval: 5000,
