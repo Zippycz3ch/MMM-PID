@@ -1,10 +1,10 @@
 var NodeHelper = require("node_helper");
 var request = require("request");
-var moment = require("moment"); // Assuming you have moment.js installed
+var moment = require("moment");
 
 module.exports = NodeHelper.create({
     start: function() {
-        console.log("MMM-PublicTransportDepartures helper started...");
+        console.log("MMM-PID helper started..."); // Updated log message
     },
 
     socketNotificationReceived: function(notification, payload) {
