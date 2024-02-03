@@ -11,6 +11,12 @@ Magic Mirror Module for Prague Integrated Transport (PID)
 
 This module is using [Public Transport | Golemio API](https://api.golemio.cz/pid/docs/openapi/#/%F0%9F%9A%8F%20PID%20Departure%20Boards/get_pid_departureboards).
 
+[Register here for API key](https://api.golemio.cz/api-keys/auth/sign-in).
+
+[Get your stop or node ID] (https://api.golemio.cz/pid/docs/openapi/#/%F0%9F%A7%BE%20GTFS%20Static/get_gtfs_stops)
+
+![Use authenticate on the website](images/auth.png)
+
 
 
 Sample config
