@@ -6,7 +6,7 @@
         feeds: [
             {
                 aswIds: "522"
-
+                title: "Ostrčilovo náměstí"
             },
             {
                 ids: "U522Z1P",
@@ -14,7 +14,6 @@
             },
             {
                 ids: "U522Z2P",
-                title: "Title"
             }
         ],
     }

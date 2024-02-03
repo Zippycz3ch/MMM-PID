@@ -1,11 +1,7 @@
 Module.register("MMM-PID", {
     defaults: {
         apiBase: "https://api.golemio.cz/v2/pid/departureboards",
-        feeds: [
-            {
-                limit: 10,
-            },
-        ],
+        feeds: [], 
         updateInterval: 5000,
     },
 
@@ -35,6 +31,14 @@ Module.register("MMM-PID", {
             if (this.loaded[i]) {
                 var feedWrapper = document.createElement("div");
                 feedWrapper.className = "departure-feed";
+
+                // Extract the title from stops[0].stop_name
+                var feedTitle = this.config.feeds[i].title || this.config.feeds[i].aswIds || this.config.feeds[i].ids || "Feed " + i;
+
+                var title = document.createElement("div");
+                title.className = "departure-title";
+                title.innerHTML = feedTitle;
+                feedWrapper.appendChild(title);
 
                 var table = document.createElement("table");
                 table.className = "departure-table";
