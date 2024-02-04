@@ -20,7 +20,7 @@ npm install
 
 ## Sample configs
 ### Basic config
-Basic config with only one node, which is two stops.
+Basic config with one node, which is two stops.
 ```
 {
     module: "MMM-PID",
@@ -29,7 +29,7 @@ Basic config with only one node, which is two stops.
         accessToken: "accessToken",
         feeds: [
             {
-                aswIds: "522",
+                aswIds: 522,
                 title: "Ostrčilovo náměstí"
             }
         ],
@@ -43,11 +43,11 @@ Basic config with only one node, which is two stops.
     position: "top_left",
     config: {
         accessToken: "accessToken",
-        coloredSameRoute: false, // Set to true for colored same routes or false for regular colors
-        updateInterval: 5000,    // in ms
+        coloredSameRoute: false, // set true as defailt, turn off by false
+        updateInterval: 5000,    // 5000 ms as default. Each API key has a rate limit of 20 requests per 8 seconds.
         feeds: [
             {
-                aswIds: "522",
+                aswIds: 522,
                 title: "Ostrčilovo náměstí" // If no title is set, aswIds or ids is used
             },
             { 
