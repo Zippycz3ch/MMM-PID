@@ -1,7 +1,7 @@
 # MMM-PID
 Magic Mirror Module for Prague Integrated Transport (PID)
 
-- shows departures and time left from departure from selected stop or node and their end station
+- shows departures and time left from departure from selected stops or nodes and their end station
 - departures time are calculated by position of the vehicle by PID, this is not time table but live data
 - stop is single stop
 - node is two or more stops that share same name and location
