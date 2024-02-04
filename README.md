@@ -55,7 +55,7 @@ Basic config with only one node, which is two stops.
                 limit: 2
             },
             {
-                ids: "U522Z2P",
+                ids: "U522Z2P"
             }
         ],
     }
