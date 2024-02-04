@@ -49,7 +49,7 @@ This module is using [Public Transport | Golemio API](https://api.golemio.cz/pid
 | `Title` | Title of the feed | `ids` or `aswIds` of the stop/node|
 | `limit` | How many entries should be loaded | 10 |
 | `updateInterval` | How often should the module fetch new information | 5000ms |
-| `coloredSameRoute` | Departures of the same number/line with same ending station, have their numbers color matched (images/same.png) | `true` |
+| `coloredSameRoute` | Departures of the same number/line with same ending station, have their numbers color matched ![coloredSameRouteTrue][images/same.png] | `true` |
 | `accessToken` | access token to golemio API | `null` |
 
 
