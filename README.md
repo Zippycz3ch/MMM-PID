@@ -1,6 +1,13 @@
 # MMM-PID
 Magic Mirror Module for Prague Integrated Transport (PID)
 
+- shows departures and time left from departure from selected stop or node and their end station
+- departures time are calculated by position of the vehicle by PID, this is not time table but live data
+- stop is single stop
+- node is two or more spots that share same name and location
+
+This module is using [Public Transport | Golemio API](https://api.golemio.cz/pid/docs/openapi/#/%F0%9F%9A%8F%20PID%20Departure%20Boards/get_pid_departureboards).
+
 ![Screenshot of PID module](images/mmm-pid.png)
 
 ## Installation
@@ -8,13 +15,6 @@ Magic Mirror Module for Prague Integrated Transport (PID)
 cd ~/MagicMirror/modules/
 git clone https://github.com/Zippycz3ch/MMM-PID
 ```
-
-- shows departures and time left from departure from selected stop or node and their end station
-- departures time are calculated by position of the vehicle by PID, this is not time table but live data
-- stop is single stop
-- node is two or more spots that share same name and location
-
-This module is using [Public Transport | Golemio API](https://api.golemio.cz/pid/docs/openapi/#/%F0%9F%9A%8F%20PID%20Departure%20Boards/get_pid_departureboards).
 
 ## Sample config
 ```
@@ -53,8 +53,10 @@ This module is using [Public Transport | Golemio API](https://api.golemio.cz/pid
 | `coloredSameRoute` | Departures of the same number/line with same ending station, have their numbers color matched | `true` |
 | `accessToken` | access token to golemio API | `null` |
 
+## ApiKey and Stop IDs
+
 [Register here for API key](https://api.golemio.cz/api-keys/auth/sign-in).
 
 [Find your stop ids or node aswIds](https://raw.githubusercontent.com/Zippycz3ch/MMM-PID/main/stopids/stops.txt).
 
-StopID U*754*Z1P = aswIds *754*
+StopID U**754**Z1P = aswIds **754**
