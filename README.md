@@ -67,7 +67,7 @@ Basic config with only one node, which is two stops.
 | :----- | :----- | :----- |
 | `ids` | id of singular stop | `null` |
 | `aswIds` | id of node | `null` |
-| `Title` | Title of the feed | `ids` or `aswIds` of the stop/node|
+| `title` | Title of the feed | `ids` or `aswIds` of the stop/node|
 | `limit` | How many entries should be loaded | 10 |
 | `updateInterval` | How often should the module fetch new information | 5000ms |
 | `coloredSameRoute` | Departures of the same number/line with same ending station, have their numbers color matched | `true` |
