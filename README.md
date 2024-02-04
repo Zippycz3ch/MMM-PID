@@ -14,6 +14,8 @@ This module is using [Public Transport | Golemio API](https://api.golemio.cz/pid
 ```
 cd ~/MagicMirror/modules/
 git clone https://github.com/Zippycz3ch/MMM-PID
+cd ~/MagicMirror/modules/MMM-PID
+npm install
 ```
 
 ## Sample config
