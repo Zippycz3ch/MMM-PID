@@ -44,7 +44,7 @@ Basic config with only one node, which is two stops.
     config: {
         accessToken: "accessToken",
         coloredSameRoute: false, // Set to true for colored same routes or false for regular colors
-        updateInterval: 5000    // in ms
+        updateInterval: 5000,    // in ms
         feeds: [
             {
                 aswIds: "522",
