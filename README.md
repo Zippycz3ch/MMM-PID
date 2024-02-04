@@ -43,6 +43,7 @@ This module is using [Public Transport | Golemio API](https://api.golemio.cz/pid
 ## Configurable option
 
 | Option | Description | Default |
+| ------------- |:-------------:| -----:|
 | `ids` | id of singular stop | `null` |
 | `aswIds` | id of node | `null` |
 | `Title` | Title of the feed | `ids` or `aswIds` of the stop/node|
