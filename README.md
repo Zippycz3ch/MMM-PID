@@ -10,6 +10,7 @@ git clone https://github.com/Zippycz3ch/MMM-PID
 ```
 
 - shows departures and time left from departure from selected stop or node and their end station
+- departures time are calculated by position of the vehicle by PID, this is not time table but live data
 - stop is single stop
 - node is two or more spots that share same name and location
 
@@ -56,4 +57,4 @@ This module is using [Public Transport | Golemio API](https://api.golemio.cz/pid
 
 [Find your stop ids or node aswIds](https://raw.githubusercontent.com/Zippycz3ch/MMM-PID/main/stopids/stops.txt).
 
-StopID U754Z1P = aswIds 754
+StopID U*754*Z1P = aswIds *754*
