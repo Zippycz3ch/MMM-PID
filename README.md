@@ -52,9 +52,6 @@ This module is using [Public Transport | Golemio API](https://api.golemio.cz/pid
 | `coloredSameRoute` | Departures of the same number/line with same ending station, have their numbers color matched | `true` |
 | `accessToken` | access token to golemio API | `null` |
 
-coloredSameRouteTrue
-![coloredSameRouteTrue](images/same.png)
-
 [Register here for API key](https://api.golemio.cz/api-keys/auth/sign-in).
 
 [Find your stop ids or node aswIds](https://raw.githubusercontent.com/Zippycz3ch/MMM-PID/main/stopids/stops.txt).
