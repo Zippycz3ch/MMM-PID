@@ -4,7 +4,7 @@ Module.register("MMM-PID", {
         feeds: [],
         updateInterval: 5000,
         coloredSameRoute: true,
-        titleColor: "#FFFFFF", // Default color for the title
+        titleColor: "#FFFFFF",
     },
 
     predefinedColors: [
@@ -69,7 +69,7 @@ Module.register("MMM-PID", {
 
                 var feedTitle = document.createElement("div");
                 feedTitle.className = "departure-title";
-                feedTitle.style.color = this.config.titleColor; // Apply title color
+                feedTitle.style.color = this.config.titleColor;
 
                 feedTitle.innerHTML = feedConfig.title || "Feed " + i;
                 feedWrapper.appendChild(feedTitle);

@@ -2,11 +2,13 @@
     module: "MMM-PID",
     position: "top_left",
     config: {
-        accessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjQxMywiaWF0IjoxNzA2NjI3MTU5LCJleHAiOjExNzA2NjI3MTU5LCJpc3MiOiJnb2xlbWlvIiwianRpIjoiMmViMzMxMGMtYWM5ZS00OGNmLTkwOTktYWFlZGMyOTIwNzdlIn0.7dxNbLlK-DbF-L4WW30cgOHihU4h7kgIXe_hHD8wha4",
+        accessToken: "accessToken",
+        coloredSameRoute: false, // Set to true for colored same routes or false for regular colors
+        updateInterval: 5000    // in ms
         feeds: [
             {
                 aswIds: "522"
-                title: "Ostrčilovo náměstí"
+                title: "Ostrčilovo náměstí" // If no title is set, aswIds or ids is used
             },
             { 
                 ids: "U522Z1P",
@@ -16,8 +18,5 @@
                 ids: "U522Z2P",
             }
         ],
-        coloredSameRoute: true, // Set to true for colored same routes or false for regular colors
-        updateInterval: 5000
-
     }
 }, 

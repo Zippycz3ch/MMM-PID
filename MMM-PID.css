@@ -11,9 +11,3 @@
 .MMM-PID .departure-data { 
   padding: 5px 10px;
 }
-
-.MMM-PID .departure-title {
-  /* Example style, actual color is set in the JavaScript */
-  font-size: 20px;
-  font-weight: bold;
-}
