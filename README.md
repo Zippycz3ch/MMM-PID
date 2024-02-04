@@ -1,7 +1,7 @@
 # MMM-PID
 Magic Mirror Module for Prague Integrated Transport (PID)
 
-![Screenshot of PID module](images/module.png)
+![Screenshot of PID module](images/mmm-pid.png)
 
 ## Installation
 ```
