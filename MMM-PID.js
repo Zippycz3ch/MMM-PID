@@ -2,7 +2,7 @@ Module.register("MMM-PID", {
     defaults: {
         apiBase: "https://api.golemio.cz/v2/pid/departureboards",
         feeds: [],
-        limit: 10,
+        limit: 7,
         updateInterval: 5000,
         coloredSameRoute: true,
         titleColor: "#FFFFFF",
