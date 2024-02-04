@@ -1,0 +1,24 @@
+{
+    "name": "MMM-PID",
+    "version": "1.0",
+    "description": "Magic Mirror Module for Prague Integrated Transport (PID)",
+    "main": "MMM-PID.js",
+    "scripts": {
+      "test": "grunt test"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Zippycz3ch/MMM-PID"
+    },
+    "keywords": [
+      "MagicMirror",
+      "PID"
+    ],
+    "author": "Zippy",
+    "license": "MIT",
+    "homepage": "https://github.com/ianperrin/MMM-NetworkScanner#readme",
+    "dependencies": {
+      "sudo": "^1.0.3",
+      "ping": "^0.1.10"
+    }
+  }
