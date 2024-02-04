@@ -22,18 +22,19 @@ Sample config
     position: "top_left",
     config: {
         accessToken: "accessToken",
+        coloredSameRoute: false, // Set to true for colored same routes or false for regular colors
+        updateInterval: 5000    // in ms
         feeds: [
             {
                 aswIds: "522"
-
+                title: "Ostrčilovo náměstí" // If no title is set, aswIds or ids is used
             },
-            {
+            { 
                 ids: "U522Z1P",
                 limit: 2
             },
             {
                 ids: "U522Z2P",
-                title: "Title"
             }
         ],
     }
@@ -51,16 +52,6 @@ coloredSameRoute: true, // Default to true for colored same routes
 [Register here for API key](https://api.golemio.cz/api-keys/auth/sign-in).
 
 
-Authenticate on the website https://api.golemio.cz/pid/docs/openapi/#/
-![Use authenticate on the website](images/auth.png)
+[Find your stop ids or node aswIds](stopids/stops.txt).
 
-[Get your stop or node ID](https://api.golemio.cz/pid/docs/openapi/#/%F0%9F%A7%BE%20GTFS%20Static/get_gtfs_stops)
-
-
-Get your stop or node ID using the stop name
-![Get your stop or node ID](images/stops.png)
-
-The response contains 2 stop_ids, each for one separate stop. The aswIds is the first 3 numbers in stop_id
-
-![Screenshot of PID module](images/response.png)
 StopID U754Z1P = aswIds 754
