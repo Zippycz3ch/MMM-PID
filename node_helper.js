@@ -33,7 +33,9 @@ module.exports = NodeHelper.create({
             headers: {
                 'X-Access-Token': this.config.accessToken
             },
-            qs: {}
+            qs: {
+                limit: feed.limit || this.config.limit
+            }
         };
 
         if (feed.ids) {
