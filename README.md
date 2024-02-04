@@ -29,7 +29,7 @@ Basic config with only one node, which is two stops.
         accessToken: "accessToken",
         feeds: [
             {
-                aswIds: "522"
+                aswIds: "522",
                 title: "Ostrčilovo náměstí"
             }
         ],
@@ -47,7 +47,7 @@ Basic config with only one node, which is two stops.
         updateInterval: 5000    // in ms
         feeds: [
             {
-                aswIds: "522"
+                aswIds: "522",
                 title: "Ostrčilovo náměstí" // If no title is set, aswIds or ids is used
             },
             { 
