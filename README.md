@@ -18,7 +18,25 @@ cd ~/MagicMirror/modules/MMM-PID
 npm install
 ```
 
-## Sample config
+## Sample configs
+### Basic config
+Basic config with only one node, which is two stops.
+```
+{
+    module: "MMM-PID",
+    position: "top_left",
+    config: {
+        accessToken: "accessToken",
+        feeds: [
+            {
+                aswIds: "522"
+                title: "Ostrčilovo náměstí"
+            }
+        ],
+    }
+}, 
+```
+### Showcase of more options
 ```
 {
     module: "MMM-PID",
