@@ -52,6 +52,6 @@ coloredSameRoute: true, // Default to true for colored same routes
 [Register here for API key](https://api.golemio.cz/api-keys/auth/sign-in).
 
 
-[Find your stop ids or node aswIds](stopids/stops.txt).
+[Find your stop ids or node aswIds](https://raw.githubusercontent.com/Zippycz3ch/MMM-PID/main/stopids/stops.txt).
 
 StopID U754Z1P = aswIds 754
