@@ -10,6 +10,9 @@ This module is using [Public Transport | Golemio API](https://api.golemio.cz/pid
 
 ![Screenshot of PID module](images/mmm-pid.png)
 
+Magic Mirror Repository : https://github.com/MagicMirrorOrg/MagicMirror
+
+
 ## Installation
 ```
 cd ~/MagicMirror/modules/
